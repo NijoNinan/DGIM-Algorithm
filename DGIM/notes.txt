@@ -1,0 +1,4 @@
+cd C:\Users\91750\Desktop\Sem 7\BDA\mp\
+venv\Scripts\activate
+cd DGIM
+python manage.py runserver

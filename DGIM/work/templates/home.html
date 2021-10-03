@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<title>DGIM Algorithm</title>
+	
+</head>
+<body>
+
+	<div class="container-fluid">
+		<h1>DGIM Algorithm</h1>
+		<hr>
+
+		<!-- buttons -->
+		<a href="{% url 'button0' %}"><button class="btn btn-danger">0</button></a>
+		<a href="{% url 'button1' %}"><button class="btn btn-danger">1</button></a>
+		<hr>
+
+		<!-- stream -->
+		<h2>Stream</h2>
+		<h5>{{l}}</h5>
+		<hr>
+
+		<!-- bucket table -->
+		<h2>Buckets</h2>
+		<table class="table table-striped table-sm">
+			<tr>
+				<th>Bucket Size</th>
+				<th>Bucket</th>
+				<th>Timestamp</th>
+			</tr>
+
+			{% for bucket in storage %}
+			<tr>
+				<td>{{bucket.size}}</td>
+				<td>{{bucket.value}}</td>
+				<td>{{bucket.time}}</td>
+			</tr>
+			{% endfor %}
+
+		</table>
+
+		
+
+	</div>
+
+
+</body>
